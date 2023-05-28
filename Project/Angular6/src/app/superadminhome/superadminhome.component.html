@@ -1,0 +1,22 @@
+
+   <form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)">
+    
+        <input type="text" #email="ngModel" [(ngModel)]="superadminService.selectedsuperadmin.email"  name="email" placeholder="Enter Email Address">
+        <input type="radio" #type="ngModel" [(ngModel)]="superadminService.selectedsuperadmin.type" name="type" value="a"> Admin<br>
+        <input type="radio" #type="ngModel" [(ngModel)]="superadminService.selectedsuperadmin.type" name="type" value="r"> Review<br>
+        <input type="radio" #type="ngModel" [(ngModel)]="superadminService.selectedsuperadmin.type" name="type" value="ar"> Admin and Review
+        
+        <input type="submit" value="Send Invitation">
+
+    </form>
+    <div class="success" *ngIf="showSucessMessage">
+        Saved successfully
+      </div>
+
+      <div class="alert" *ngIf="serverErrorMessages">
+        {{serverErrorMessages}}
+      </div>
+    
+        
+        
+    

@@ -1,0 +1,15 @@
+â—� src
++---â—� app
+|   +--â—� user
+|   |  |--user.component.ts|.html|.css
+|   |  +--â—� sign-up
+|   |  |  |--sign-up.component.ts|.html|.css
+|   |  
+|   |--â—� shared
+|   |  |--user.service.ts
+|   |  |--user.model.ts
+|   |
+|   |--app.module.ts
+|   |--routes.ts 
+|
+|--index.html

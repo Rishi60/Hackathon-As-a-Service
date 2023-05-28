@@ -1,0 +1,35 @@
+<mat-toolbar color="primary"><nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a href="#" class="navbar-brand">Hackathon As a Service</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li><a routerLink="/teams" class="nav-link">Edit</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+</mat-toolbar>
+
+
+<form #Adminform="ngForm" (ngSubmit)="onSubmit(Adminform)">
+  <input type="text" #department="ngModel" [(ngModel)]="adminService.selectedAdmin.department" name="department" placeholder="Department"
+  >
+  
+  <input type="text" #statusofapplication="ngModel" [(ngModel)]="adminService.selectedAdmin.statusofapplication" name="statusofapplication" placeholder="Application"
+  >
+  <!--<div *ngIf="Adminform.submitted && !statusofapplication.valid">
+    <label class="validation-message">This field is required.</label>
+  </div>-->
+  
+  
+  
+  <input type="submit" value="Admin register">
+</form>
+<div class="success" *ngIf="showSucessMessage">
+  Saved successfully
+</div>
+
+<!-- Error message -->
+<div class="alert" *ngIf="serverErrorMessages">
+  {{serverErrorMessages}}
+</div>

@@ -1,0 +1,24 @@
+
+<form #problemstatementForm="ngForm" (ngSubmit)="problemstatementForm.valid && onSubmit(problemstatementForm)">
+  <input type="text" #problemstatement="ngModel" [(ngModel)]="problemcommitteeService.selectedProblem.problemstatement" name="problemstatement" placeholder="problemstatement"
+  >
+  <div *ngIf="problemstatementForm && !problemstatement.valid">
+    <label class="validation-message">This field is required.</label>
+  </div>
+  <input type="text" #department="ngModel" [(ngModel)]="problemcommitteeService.selectedProblem.deparment" name="department" placeholder="department"
+  >
+  <div *ngIf="problemstatementForm && !department.valid">
+    <label class="validation-message">This field is required.</label>
+  </div>
+  <input type="submit" value="Submit Problem Statement">
+</form>
+
+<!-- Success message -->
+<div class="success" *ngIf="showSucessMessage">
+  Saved successfully
+</div>
+
+<!-- Error message -->
+<div class="alert" *ngIf="serverErrorMessages">
+  {{serverErrorMessages}}
+</div>
